@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+     <header>
+    <!-- 
+  BRAND / SITE IDENTITY
+  This container groups the site “branding” together.
+  - The dot is decorative only (styled in CSS), so it is hidden from screen readers.
+  - The text is the site name and is read normally by assistive technology.
+  - We use <div> and <span> here because this is layout/visual grouping,
+    not content that needs semantic meaning like <header> or <h1>.
+-->
+
+   <div class="brand">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span>Mr. Burger</span>
+  </div>
+
+ <!-- DESKTOP NAV (only desktop links here) -->
+  <nav class="desktop-nav main-nav" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="gallery.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="media.html">Careers</a>
+  </nav>
+
+  <!-- MOBILE TOGGLE BUTTON -->
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+    <span aria-hidden="true"></span>
+  </button>
+</header>
+
+<!-- Mobile slide-in menu -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+ 
+  <a href="index.html" class="active" aria-current="page">Home</a>
+  <a href="gallery.html">Menu</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="media.html">Careers</a>
+</nav>
+
+
+
+  
+
+  <main class="container">
+
+    <!-- 
+      VIDEO SECTION
+    
+    -->
+    
+
+      <h2>Join our team!</h2>
+
+      <!-- 
+        VIDEO ELEMENT
+        controls 
+        poster image shown before video
+      -->
+      <video
+        id="mainVideo"
+        controls
+        poster="images/cheeseburger.jpg" alt="cheeseburger image from canva">
+
+        <!-- Video file -->
+        <source src="freevideo.mp4" type="video/mp4">
+
+        <!-- Fallback text -->
+        Your browser does not support HTML5 video.
+      </video>
+
+      <!-- 
+       alternative text summary for accessibility.
+      -->
+      <p>
+        <strong>A look inside our kitchen:</strong>
+        Check out our awesome work environment!
+      </p>
+
+      <!-- 
+        CUSTOM PLAY/PAUSE BUTTON
+        Adds interactivity beyond native controls.
+      -->
+      <button id="videoBtn">
+        Pause Video
+      </button>
+
+    </section>
+
+    <!-- 
+      Audio
+     transcript for accessibility.
+    -->
+    <section class="reveal">
+
+
+      <h2>Our Soundtrack</h2>
+
+      <!-- 
+        AUDIO PLAYER
+        playback and volume adjustment.
+      -->
+      <audio controls id="audioPlayer">
+
+        <!-- Audio source -->
+        <source src="huston.mp3" type="audio/mpeg">
+
+        <!-- Fallback text -->
+        Your browser does not support HTML5 audio.
+      </audio>
+
+      <!-- 
+  text alternative for audio content.
+      -->
+      <div>
+        <h3>Original music produced by our CEO</h3>
+
+      </div>
+
+    </section>
+
+
+
+
+    
+</body>
+</html>

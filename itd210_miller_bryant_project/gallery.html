@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+    <!-- 
+  BRAND / SITE IDENTITY
+  This container groups the site “branding” together.
+  - The dot is decorative only (styled in CSS), so it is hidden from screen readers.
+  - The text is the site name and is read normally by assistive technology.
+  - We use <div> and <span> here because this is layout/visual grouping,
+    not content that needs semantic meaning like <header> or <h1>.
+-->
+
+     <div class="brand">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span>Mr. Burger</span>
+  </div>
+
+<!-- DESKTOP NAV (only desktop links here) -->
+  <nav class="desktop-nav main-nav" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="gallery.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="media.html">Careers</a>
+  </nav>
+
+  
+
+<!-- Mobile slide-in menu -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+ 
+  <a href="index.html" class="active" aria-current="page">Home</a>
+  <a href="gallery.html">Menu</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="media.html">Careers</a>
+</nav>
+
+
+   <!-- MOBILE TOGGLE BUTTON -->
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+    <span aria-hidden="true"></span>
+  </button>
+</header>
+
+
+
+ <section class="section" id="projects">
+    <div class="section-inner">
+      <h2>MENU</h2>
+      <p class="lead">
+        Order Now!
+      </p>
+
+      <div class="cards">
+<!-- 
+  CARD COMPONENT (Semantic + Reusable)
+  Why this structure:
+  - <article> is used because this card represents a self-contained
+    piece of content that could stand on its own (like a preview of a page).
+  - This makes the card reusable, accessible, and meaningful to screen readers.
+
+  Structure breakdown:
+  - .card → the overall container for one piece of content
+  - .card-media → holds the visual (image OR video, never both)
+    Visuals help users quickly understand the topic.
+  - .card-body → contains the text content and call-to-action
+  - <span class="card-tag"> → short category label (scannable UI)
+  - <h3> → heading for this content block (correct hierarchy under h2)
+  - <p> → brief explanation of what the page or section contains
+  - <a class="card-link"> → clear call-to-action that leads to another page
+
+-->
+        <!-- CARD 1 -->
+        <article class="card" id="skills">
+          <div class="card-media">
+            <!-- Use image OR video -->
+            <img src="images/cheeseburger.jpg" alt="AI cheeseburger image from canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Burger</span>
+            <h3>Bacon cheeseburger</h3>
+            <p>A classic bacon cheeseburger with lettuce and tomato</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/onionburger.jpg" alt="AI image of burger from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Burger</span>
+            <h3>Onion Ring Burger</h3>
+            <p>Cheeseburger topped with onion rings, red onions, and pickles</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card" id="process">
+          <div class="card-media">
+            <img src="images/fries.jpg" alt="AI image of fries from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">fries</span>
+            <h3>Loaded Fries</h3>
+            <p>French fries topped with chilli and cheese</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/chicken.jpg" alt="AI image of chicken from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Chicken</span>
+            <h3>Chicken Tenders</h3>
+            <p>Battered fried chicken tenders</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+         <!-- CARD 5 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/classic burger.jpg" alt="AI image of burger from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Burger</span>
+            <h3>Cheeseburger</h3>
+            <p>Classic burger</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+          <!-- CARD 6 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/hotdog.jpg" alt="AI image of hot dog from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Hotdog</span>
+            <h3>Plain Hotdog</h3>
+            <p>Beef dog</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+          <!-- CARD 7 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/wings.jpg" alt="AI image of wings from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Chicken</span>
+            <h3>Wings</h3>
+            <p>Fried wings</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+          <!-- CARD 8 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/soda.jpg" alt="AI image of soda from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Drink</span>
+            <h3>Soda</h3>
+            <p>Fountain soda</p>
+            <a class="card-link" href="menu.html">Order →</a>
+                    </div>
+        </article>
+
+          <!-- CARD 9 -->
+        <article class="card" id="contact">
+          <div class="card-media">
+            <img src="images/milkshake.jpg" alt="AI image of shake from Canva">
+          </div>
+          <div class="card-body">
+            <span class="card-tag"></span>Drink</span>
+            <h3>Milkshake</h3>
+            <p>Handspun shake</p>
+            <a class="card-link" href="menu.html">Order →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+    
+</body>
+</html>
