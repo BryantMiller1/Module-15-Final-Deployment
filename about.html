@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+
+<body>
+
+<header>
+    <!-- 
+  BRAND / SITE IDENTITY
+  This container groups the site “branding” together.
+  - The dot is decorative only (styled in CSS), so it is hidden from screen readers.
+  - The text is the site name and is read normally by assistive technology.
+  - We use <div> and <span> here because this is layout/visual grouping,
+    not content that needs semantic meaning like <header> or <h1>.
+-->
+
+   <div class="brand">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span>Mr. Burger</span>
+  </div>
+
+  <!-- DESKTOP NAV (only desktop links here) -->
+  <nav class="desktop-nav main-nav" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="gallery.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="media.html">Careers</a>
+  </nav>
+
+  <!-- MOBILE TOGGLE BUTTON -->
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+    <span aria-hidden="true"></span>
+  </button>
+
+<!-- Mobile slide-in menu -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+ 
+  <a href="index.html" class="active" aria-current="page">Home</a>
+  <a href="gallery.html">Menu</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="media.html">Careers</a>
+</nav>
+</header>
+
+
+
+
+<main>
+
+<!-- Profile grid section with photo and short bio -->
+<div class="profile">
+  <img src="images/profile.jpg" alt="Headshot Photo">
+  <div class="bio">
+    <h2>Bryant Miller CEO</h2>
+    <p>Say hello to our Creator.</p>
+  </div>
+</div>
+
+<!-- Grid container for info cards -->
+<div class="section">
+
+<div class="cardabout">
+<h2>Skills</h2>
+<p>HTML, CSS, Python</p>
+</div>
+
+<div class="cardabout">
+<h2>Interests</h2>
+<p>Web development, music production, technology trends.</p>
+</div>
+
+<div class="cardabout">
+<h2>Education</h2>
+<p>Information Systems Technology (NVCC)</p>
+</div>
+
+<div class="cardabout">
+<h2>Hobbies</h2>
+<p>Music Production, gaming, reading</p>
+</div>
+
+<div class="cardabout">
+<h2>Goals</h2>
+<p>become a better developer</p>
+</div>
+
+<div class="cardabout">
+<h2>Projects</h2>
+<p>Mr. Burger website</p>
+</div>
+</div>
+
+<!-- flex section for reflection -->
+<div class="cardabout">
+  <h2>Mini Reflection</h2>
+
+      So far in this course I have learned how to use CSS flex and grid along with how to make my cards responsive. Another important thing i learned is how to balance the design of my webpages by using more white space.
+    
+
+  
+      The assignments have all been helpful. The most helpful for me was the grid game. It provided good practice for real scenarios.
+   
+
+      If I could change something about the class, I would include more step-by-step examples before assignments.
+      Sometimes I get a better understand of requirements when I can visualize what steps I need to take.
+
+</div>
+
+</main>
+</body>
+<footer>Bryant Miller ITD 120</footer>
+</html>

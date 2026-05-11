@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+     <header>
+    <!-- 
+  BRAND / SITE IDENTITY
+  This container groups the site “branding” together.
+  - The dot is decorative only (styled in CSS), so it is hidden from screen readers.
+  - The text is the site name and is read normally by assistive technology.
+  - We use <div> and <span> here because this is layout/visual grouping,
+    not content that needs semantic meaning like <header> or <h1>.
+-->
+
+   <div class="brand">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span>Mr. Burger</span>
+  </div>
+
+  <!-- DESKTOP NAV (only desktop links here) -->
+  <nav class="desktop-nav main-nav" aria-label="Primary navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="gallery.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="media.html">Careers</a>
+  </nav>
+
+  <!-- MOBILE TOGGLE BUTTON -->
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+    <span aria-hidden="true"></span>
+  </button>
+</header>
+
+<!-- Mobile slide-in menu -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+ 
+  <a href="index.html" class="active" aria-current="page">Home</a>
+  <a href="gallery.html">Menu</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="media.html">Careers</a>
+</nav>
+</head>
+
+
+
+
+<body>
+
+    <!-- =========================
+         main content for form
+    ========================= -->
+    <main class="container">
+
+        <!-- Page Heading -->
+        <h1>Contact Us</h1>
+
+        <!-- =========================
+             ARIA LIVE REGION
+             Announces validation updates to screen readers
+        ========================= -->
+        <div id="formStatus" aria-live="polite"></div>
+
+        <!-- =========================
+             SEMANTIC CONTACT FORM
+        ========================= -->
+        <form id="contactForm" novalidate>
+
+            <!-- ==============\===========
+                 Name box
+            ========================= -->
+            <div class="form-group">
+
+                <!-- Visible label connected to input -->
+                <label for="name">Full Name</label>
+
+                <!-- Input field with required validation -->
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                    aria-describedby="nameHelp"
+                >
+
+                <!-- Helper text for accessibility -->
+                <small id="nameHelp" class="helper-text">
+                    Please enter your first and last name.
+                </small>
+
+                <!-- Inline error container -->
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <!-- =========================
+                 Email box
+            ========================= -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    required
+                    aria-describedby="emailHelp"
+                >
+
+                <small id="emailHelp" class="helper-text">
+                    We will not send spam emails.
+                </small>
+
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <!-- =========================
+                 subject box
+            ========================= -->
+            <div class="form-group">
+                <label for="subject">Subject</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="What is your message about?"
+                    required
+                >
+
+                <div class="error" id="subjectError"></div>
+            </div>
+
+            <!-- =========================
+                 message box
+            ========================= -->
+            <div class="form-group">
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message here..."
+                    required
+                    aria-describedby="messageHelp"
+                ></textarea>
+
+                <small id="messageHelp" class="helper-text">
+                    Message must be at least 20 characters long.
+                </small>
+
+                <div class="error" id="messageError"></div>
+            </div>
+
+            <!-- =========================
+                 Submit button
+            ========================= -->
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- =========================
+             card after successful validation
+        ========================= -->
+        <div class="success-card" id="successCard">
+            <h2>Thank You!</h2>
+            <p>Your message has been successfully submitted.</p>
+        </div>
+
+        <!-- =========================
+             FAQ accordion
+             
+        ========================= -->
+        <section aria-label="Frequently Asked Questions">
+
+            <h2>FAQ</h2>
+
+            <!-- Accordion item -->
+            <details>
+                <summary>How quickly will I get a response?</summary>
+                <p>Messages receive a response within 24 hours.</p>
+            </details>
+
+            <!-- Accordion item -->
+            <details>
+                <summary>Can I contact by phone?</summary>
+                <p>We are reachable through email only.</p>
+            </details>
+
+            <!-- Accordion item -->
+            <details>
+                <summary>Do you accept catering orders?</summary>
+                <p>Yes! </p>
+            </details>
+
+        </section>
+
+    </main>
+
+    <script>
+        // =========================
+        // GET FORM ELEMENTS
+        // Stores references to inputs and UI elements
+        // =========================
+        const form = document.getElementById("contactForm");
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const subjectInput = document.getElementById("subject");
+        const messageInput = document.getElementById("message");
+
+        const successCard = document.getElementById("successCard");
+        const formStatus = document.getElementById("formStatus");
+
+        // =========================
+        // EMAIL VALIDATION FUNCTION
+        // Uses regex to check email format
+        // =========================
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // =========================
+        // FORM SUBMIT EVENT
+        // Prevents default form submission
+        // and performs custom validation
+        // =========================
+        form.addEventListener("submit", function(event) {
+
+            // Prevent page reload
+            event.preventDefault();
+
+            // Tracks whether form is valid
+            let isValid = true;
+
+            // =========================
+            // CLEAR PREVIOUS ERRORS
+            // =========================
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("subjectError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+
+            // =========================
+            // VALIDATE NAME
+            // =========================
+            if (nameInput.value.trim() === "") {
+                document.getElementById("nameError").textContent =
+                    "Please enter your name.";
+                isValid = false;
+            }
+
+            // =========================
+            // VALIDATE EMAIL
+            // =========================
+            if (emailInput.value.trim() === "") {
+
+                document.getElementById("emailError").textContent =
+                    "Please enter your email.";
+
+                isValid = false;
+
+            } else if (!isValidEmail(emailInput.value)) {
+
+                document.getElementById("emailError").textContent =
+                    "Please enter a valid email address.";
+
+                isValid = false;
+            }
+
+            // =========================
+            // VALIDATE SUBJECT
+            // =========================
+            if (subjectInput.value.trim() === "") {
+                document.getElementById("subjectError").textContent =
+                    "Please enter a subject.";
+                isValid = false;
+            }
+
+            // =========================
+            // VALIDATE MESSAGE LENGTH
+            // =========================
+            if (messageInput.value.trim().length < 20) {
+
+                document.getElementById("messageError").textContent =
+                    "Message must be at least 20 characters.";
+
+                isValid = false;
+            }
+
+            // =========================
+            // SUCCESS STATE
+            // Shows thank-you card if form passes
+            // =========================
+            if (isValid) {
+
+                // Show animated success message
+                successCard.style.display = "block";
+
+                // Update ARIA live region
+                formStatus.textContent =
+                    "Form submitted successfully.";
+
+                // Reset form fields
+                form.reset();
+
+            } else {
+
+                // Error announcement for screen readers
+                formStatus.textContent =
+                    "Please correct the errors in the form.";
+            }
+        });
+    </script>
+
+
+
+    
+</body>
+</html>
